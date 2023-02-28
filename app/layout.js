@@ -13,10 +13,14 @@ export default function RootLayout({ children }) {
 
       
       <body>
-      <Header />
-      
-      {children}
-      <Footer />
+      <div className='container'>
+
+        <Header />
+        <div className='content'>
+          {children}
+        </div>
+        <Footer />
+      </div>
       </body>
     </html>
   )

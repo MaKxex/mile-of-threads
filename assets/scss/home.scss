@@ -1,0 +1,23 @@
+.product {
+    width: 100%;
+    // height: 420px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color: #000000 !important;
+    gap:30px;
+
+    .-top {
+        display: flex;
+    }
+
+    .-bottom {
+        .-img {
+            height: 200px;
+            width: auto;
+
+        }
+    }
+    
+
+}
