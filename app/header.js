@@ -12,7 +12,11 @@ export default function Header() {
             <Link href="/">
                 <Image src={Logo}/>
             </Link>
-            <div> Profile</div>
+            <div className='-navbar_btns'>
+              <div> Profile</div>
+              <div> Cart</div>
+              <div> Language</div>
+            </div>
         </div>
         <div className='-bottom'>
             <Link href="/whats-new">Что нового?</Link>
