@@ -12,6 +12,14 @@
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
+
+        .-navbar_btns {
+            color: red;
+            align-content: space-between;
+            
+        }
+
+
     }
     .-bottom {
         margin: 0 120px;

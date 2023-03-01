@@ -3,12 +3,20 @@ import { Inter } from 'next/font/google'
 //import styles from './page.module.css'
 import "../assets/scss/home.scss"
 import Tovar from "../assets/img/tovar.jpg"
+import Slider from "../assets/img/slider.png"
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
+        <div>
+        <div className='slider'>
+            <Image src={Slider} />
+
+        </div>
+
+
         <div className= 'product'>
             <div className = "-top">
                 <div className='-title'>
@@ -28,10 +36,7 @@ export default function Home() {
                 <Image src={Tovar} className='-img' />
 
             </div>
-
-        
-
-
+        </div>
         </div>
 
 

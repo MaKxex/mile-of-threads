@@ -9,15 +9,29 @@
 
     .-top {
         display: flex;
+        justify-content:  space-between;
     }
 
     .-bottom {
+        display: flex;
+        justify-content:  space-around;    
+        gap: 0px;
+
         .-img {
-            height: 200px;
-            width: auto;
+            height: 420px;
+            width: 420px;
 
         }
     }
     
+
+}
+
+
+
+.slider {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
 
 }
