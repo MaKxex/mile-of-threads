@@ -5,6 +5,11 @@ import Image from 'next/image'
 
 import Link from 'next/link'
 
+
+
+
+
+
 export default function Header() {
   return (
     <div className='navbar'>
@@ -13,9 +18,9 @@ export default function Header() {
                 <Image src={Logo}/>
             </Link>
             <div className='-navbar_btns'>
-              <div> Profile</div>
-              <div> Cart</div>
-              <div> Language</div>
+              <div className='-navBtn'> Profile</div>
+              <div className='-navBtn'> Cart</div>
+              <div className='-navBtn'> Language</div>
             </div>
         </div>
         <div className='-bottom'>
