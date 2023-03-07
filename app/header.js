@@ -15,9 +15,6 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import BackpackOutlinedIcon from '@mui/icons-material/BackpackOutlined';
 
 
-
-
-
 const jura = Jura({
   weight: '400',
   subsets: ['latin'],
@@ -29,17 +26,13 @@ const manrope = Manrope({
 })
 
 
-
-
-
-
 export default function Header() {
   return (
     <div className='navbar'>
         <div className='-top'>
             <div></div>
             <Link className='logo' href="/">
-                <Image src={Logo} alt='logo'/>
+                <Image className='logo' src={Logo} alt='logo'/>
             </Link>
             <div className='-navbar_btns'>
               <Link href="/#"><AccountCircleOutlinedIcon className='-navBtns' /></Link>

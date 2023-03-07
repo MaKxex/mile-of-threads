@@ -1,6 +1,8 @@
 
 .logo {
     margin: 0 auto;
+    height: 76px;
+    width: auto;
 }
 
 .navbar {
@@ -20,13 +22,14 @@
         justify-content: space-between;
 
         .-navbar_btns {
-            align-content: space-between;
             align-items: center;
             display: flex;
             flex-direction: row;
             gap: 15px;
             .-navBtns {
-                font-size: 34px;
+                
+                font-size: 32px;
+                
             }
             
 

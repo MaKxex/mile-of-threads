@@ -4,13 +4,17 @@ import { Inter } from 'next/font/google'
 import "../assets/scss/home.scss"
 import "../assets/scss/layout.scss"
 import Tovar from "../assets/img/tovar.jpg"
-import Slider from "../assets/img/slider.png"
+import MySwiper from '@/сomponents/MySwiper'
 
 
 
 export default function Home() {
   return (
         <div>
+
+        {/* <MySwiper /> */}
+
+
         <div className='figure'>
             <Image src={Slider} />
 
