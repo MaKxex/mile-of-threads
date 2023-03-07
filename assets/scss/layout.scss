@@ -39,6 +39,31 @@
     }
 }
 
+.container {
+    //margin: 0 84px;
+    display: flex;
+    padding: 0 84px;
+  }
+
+
+
 .footer {
+    width: 100%;
     background: #f1f1f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    //gap:30px;
+    .-footer-content-block {
+        //width: 233px;
+        margin-top: 124px;
+        // margin-right: 75px;
+        display: flex;
+
+        .-footer-content-title {
+            font-size: 100;
+            font-weight: 600;
+        }
+
+    }
 }
