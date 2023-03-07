@@ -28,6 +28,17 @@
 }
 
 
+.figure {
+    width: 100%;
+    height: 688px ;
+}
+
+.figure img {
+    width: 100%; /* Ширина изображений */
+    height: 100%; /* Высота изображении */
+    object-fit: cover; /* Вписываем фотографию в область */
+}
+
 
 .slider {
     width: 100%;
