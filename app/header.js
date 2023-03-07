@@ -21,6 +21,9 @@ export default function Header() {
               <div className='-navBtn'> Profile</div>
               <div className='-navBtn'> Cart</div>
               <div className='-navBtn'> Language</div>
+              <div>Profile</div>
+              <div>Cart</div>
+              <div>Language</div>
             </div>
         </div>
         <div className='-bottom'>
