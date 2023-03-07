@@ -13,9 +13,9 @@ export default function Header() {
                 <Image src={Logo}/>
             </Link>
             <div className='-navbar_btns'>
-              <div> Profile</div>
-              <div> Cart</div>
-              <div> Language</div>
+              <div>Profile</div>
+              <div>Cart</div>
+              <div>Language</div>
             </div>
         </div>
         <div className='-bottom'>

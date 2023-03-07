@@ -13,14 +13,14 @@ export default function RootLayout({ children }) {
 
       
       <body>
-      <div className='container'>
+      {/* <div className='container'> */}
 
         <Header />
         <div className='content'>
           {children}
         </div>
         <Footer />
-      </div>
+      {/* </div> */}
       </body>
     </html>
   )

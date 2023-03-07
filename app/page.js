@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 //import styles from './page.module.css'
 import "../assets/scss/home.scss"
+import "../assets/scss/layout.scss"
 import Tovar from "../assets/img/tovar.jpg"
 import Slider from "../assets/img/slider.png"
 
@@ -16,27 +17,29 @@ export default function Home() {
 
         </div>
 
+        <div className='container'>
+            <div className= 'product'>
+                    <div className = "-top">
+                        <div className='-title'>
+                        Впервые в магазине
 
-        <div className= 'product'>
-            <div className = "-top">
-                <div className='-title'>
-                Впервые в магазине
+                        </div>
+                        <div className='-comment'>
+                        Мы тоже были в шоке увидев наши новые принты
 
-                </div>
-                <div className='-comment'>
-                Мы тоже были в шоке увидев наши новые принты
+                        </div>
 
+                    </div>
+
+                    <div className='-bottom'>
+                        <Image src={Tovar} className='-img' />
+                        <Image src={Tovar} className='-img' />
+                        <Image src={Tovar} className='-img' />
+
+                    </div>
                 </div>
 
             </div>
-
-            <div className='-bottom'>
-                <Image src={Tovar} className='-img' />
-                <Image src={Tovar} className='-img' />
-                <Image src={Tovar} className='-img' />
-
-            </div>
-        </div>
         </div>
 
 
