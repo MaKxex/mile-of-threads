@@ -1,9 +1,32 @@
+"use client";
+
 import React from 'react'
 import "../assets/scss/layout.scss"
 import Logo from "../assets/img/logo.svg"
 import Image from 'next/image'
 
 import Link from 'next/link'
+
+
+
+import {Jura, Manrope } from 'next/font/google'
+
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import BackpackOutlinedIcon from '@mui/icons-material/BackpackOutlined';
+
+
+
+
+
+const jura = Jura({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const manrope = Manrope({
+  weight: '500',
+  subsets: ['latin'],
+})
 
 
 
@@ -14,23 +37,21 @@ export default function Header() {
   return (
     <div className='navbar'>
         <div className='-top'>
-            <Link href="/">
-                <Image src={Logo}/>
+            <div></div>
+            <Link className='logo' href="/">
+                <Image src={Logo} alt='logo'/>
             </Link>
             <div className='-navbar_btns'>
-              <div className='-navBtn'> Profile</div>
-              <div className='-navBtn'> Cart</div>
-              <div className='-navBtn'> Language</div>
-              <div>Profile</div>
-              <div>Cart</div>
-              <div>Language</div>
+              <Link href="/#"><AccountCircleOutlinedIcon className='-navBtns' /></Link>
+              <Link href="/#"><BackpackOutlinedIcon className='-navBtns' /></Link>
+              <Link href="/#" className='-navBtns'><span className={manrope.className}>rus</span></Link>
             </div>
         </div>
         <div className='-bottom'>
-            <Link href="/whats-new">Что нового?</Link>
-            <Link href="/clothes">Одежда</Link>
-            <Link href="/accessories">Аксессуары</Link>
-            <Link href="/about-us">Кто мы?</Link>
+            <Link className={jura.className} href="/whats-new">Что нового?</Link>
+            <Link className={jura.className} href="/clothes">Одежда</Link>
+            <Link className={jura.className} href="/accessories">Аксессуары</Link>
+            <Link className={jura.className} href="/about-us">Кто мы?</Link>
         </div>
     
     </div>

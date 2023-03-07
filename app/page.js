@@ -7,12 +7,11 @@ import Tovar from "../assets/img/tovar.jpg"
 import Slider from "../assets/img/slider.png"
 
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
         <div>
-        <div className='slider'>
+        <div className='figure'>
             <Image src={Slider} />
 
         </div>
