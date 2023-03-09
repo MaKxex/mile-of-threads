@@ -1,29 +1,28 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 //import styles from './page.module.css'
 import "../assets/scss/home.scss"
 import "../assets/scss/layout.scss"
-import MySwiper from '@/сomponents/MySwiper'
 import Slider from "../assets/img/slider.png"
-
 import Showcase from "../сomponents/Showcase"
+import Article from '@/сomponents/Article'
 
 
 
 export default function Home() {
   return (
-        <div>
+    <div className='content'>
 
-        {/* <MySwiper /> */}
+      <div className='figure'>
+          <Image src={Slider} />
 
+      </div>
 
-        <div className='figure'>
-            <Image src={Slider} />
-
-        </div>
-
-        <Showcase text="Впервые в магазине" text="Мы тоже были в шоке увидев наши новые принты"></Showcase>
-        </div>
+      <Showcase text="Впервые в магазине" comment="Мы тоже были в шоке увидев наши новые принты 🤯" />
+      <Showcase text="Часто заказывают" comment="Вам явно нравится наш стаф" />
+      <Showcase text="Зацени, какие фигурки <3" comment="Мы сами печатаем все фигурки и гарантируем вам, они офигенные!" />
+      <Article title="Кстати о нас!" text= "Мы - единственный  магазин Латвии, где ты сможешь купить одежду с вышитым персонажем из твоего любимого аниме! Наш ассортимент пополняется с бешеным темпом! Ну а если ты не смог найти что-то интересное для себя, то ты сможешь заказать собственный эскиз, который будет вышит и доставлен в самые кратчайшие сроки. " />
+    
+    </div>
 
 
   )
