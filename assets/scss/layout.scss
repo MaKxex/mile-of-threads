@@ -21,18 +21,16 @@
         flex-direction: row;
         justify-content: space-between;
 
-        .-navbar_btns {
+        .-navbar-icons {
             align-items: center;
             display: flex;
             flex-direction: row;
             gap: 15px;
-            .-navBtns {
-                
+            .-navbar-icon {   
                 font-size: 32px;
                 
             }
             
-
         }
 
 
@@ -48,6 +46,7 @@
         font-size: 46px;
         color: #000000;
 
+        
     }
 }
 
