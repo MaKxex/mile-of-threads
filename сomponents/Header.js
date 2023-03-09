@@ -34,17 +34,17 @@ export default function Header() {
             <Link className='logo' href="/">
                 <Image className='logo' src={Logo} alt='logo'/>
             </Link>
-            <div className='-navbar_btns'>
-              <Link href="/#"><AccountCircleOutlinedIcon className='-navBtns' /></Link>
-              <Link href="/#"><BackpackOutlinedIcon className='-navBtns' /></Link>
-              <Link href="/#" className='-navBtns'><span className={manrope.className}>rus</span></Link>
+            <div className='-navbar-icons'>
+              <Link href="/#" className='-navbar-icon'><span className={manrope.className}>rus</span></Link>
+              <Link href="/#"><AccountCircleOutlinedIcon className='-navbar-icon' /></Link>
+              <Link href="/#"><BackpackOutlinedIcon className='-navbar-icon' /></Link>
             </div>
         </div>
         <div className='-bottom'>
-            <Link className={jura.className} href="/whats-new">Что нового?</Link>
-            <Link className={jura.className} href="/clothes">Одежда</Link>
-            <Link className={jura.className} href="/accessories">Аксессуары</Link>
-            <Link className={jura.className} href="/about-us">Кто мы?</Link>
+            <div className='-nav-drop'><Link className={jura.className} href="/whats-new">Что нового?</Link></div>
+            <div className='-nav-drop'><Link className={jura.className} href="/clothes">Одежда</Link></div>
+            <div className='-nav-drop'><Link className={jura.className} href="/accessories">Аксессуары</Link></div>
+            <div className='-nav-drop'><Link className={jura.className} href="/custom">Кастом</Link></div>
         </div>
     
     </div>

@@ -1,0 +1,10 @@
+.bigImage {
+    // width: auto;
+    position: absolute;
+    // margin: 20px;
+    height: 855px;
+    z-index: 0;
+    background-size: cover;
+    background-image: url('/assets/img/bigImage.png');
+    background-repeat: no-repeat;
+}
