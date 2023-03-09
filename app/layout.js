@@ -1,5 +1,5 @@
-import Footer from './footer'
-import Header from './header'
+import Footer from '../сomponents/Footer'
+import Header from '../сomponents/Header'
 import './globals.scss'
 
 export const metadata = {
@@ -10,17 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
-      
       <body>
-      {/* <div className='container'> */}
-
         <Header />
-        <div className='content'>
-          {children}
-        </div>
+        {children}
         <Footer />
-      {/* </div> */}
       </body>
     </html>
   )

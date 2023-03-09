@@ -1,0 +1,23 @@
+.article {
+    width: 100%;
+    gap: 100px;
+    display: flex;
+    flex-direction: column;
+
+    .article-title {
+        margin-top: 200px;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 76px;
+    }
+
+    .article-text {
+        margin: 0 auto;
+        width: 1050px;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 49px;
+        margin-bottom: 200px;
+    }
+
+}
