@@ -1,0 +1,62 @@
+.type-title {
+    
+}
+
+
+.tile {
+    width: 280px;
+    height: 430px;
+    border: 1px solid black;
+    padding: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+
+    .-middle {
+        display: flex;
+        flex-direction: column;
+
+        .-middle-top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .-title h1 {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        .-price, .-currency {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        .-description {
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .-middle-bottom {
+            justify-content: end;
+            display: flex;
+            .-wishlistIcon {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    
+    .-addToCart {
+        width: 100%;
+        height: 37px;
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        // padding-bottom: 5px;
+    }
+
+}
