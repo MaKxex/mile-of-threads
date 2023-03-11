@@ -7,6 +7,7 @@ import {Jura, Manrope } from 'next/font/google'
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
+
 const jura = Jura({
   subsets: ['latin'],
 })
@@ -14,6 +15,8 @@ const jura = Jura({
 const manrope = Manrope({
   subsets: ['latin'],
 })
+
+
 
 
 export default function ProductTile(props) {
@@ -24,7 +27,6 @@ export default function ProductTile(props) {
 
 	return (
 	<div className="container">
-
 		<h1 className="type-title">Худи</h1>
 
 		<div className="tile">
@@ -38,7 +40,6 @@ export default function ProductTile(props) {
 						<h1 className={jura.className}>Мыслитель</h1>
 					</div>
 
-
 					<div className={jura.className}>
 						<span className="-price">20<span className="-currency">€</span></span>
 					</div>
@@ -50,9 +51,7 @@ export default function ProductTile(props) {
 				<div className="-middle-bottom">
 					<div className="-wishlistIcon"><FavoriteBorderIcon/></div>
 				</div>
-
 			</div>
-
 			<div className="-bottom">
 				<div></div>
 				<button className="-addToCart" type="button" ><span className={manrope.className}>Добавить в рюкзак</span></button>
@@ -60,9 +59,6 @@ export default function ProductTile(props) {
 			</div>
 
 		</div>
-
-
-
 	</div>
   )
 }
