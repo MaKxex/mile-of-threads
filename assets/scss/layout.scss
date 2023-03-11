@@ -36,9 +36,12 @@
 
     }
     .-bottom {
-        margin: 0 120px;
+        margin: 0 200px;
         justify-content: space-between;
         display: flex;
+        //margin: 0 auto;
+        // display: grid;
+        // grid-template-columns: 25% 25% 25% 25%;
         flex-direction: row;
         font-family: 'Jura';
         font-style: normal;
@@ -46,6 +49,10 @@
         font-size: 46px;
         color: #000000;
 
+        .-nav-drop {
+            display: flex;
+            flex-direction: row;
+        }
         
     }
 }
