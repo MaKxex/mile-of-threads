@@ -1,7 +1,15 @@
-import React from 'react'
+
+import ProductTile from "@/сomponents/ProductTile";
+
+var income = []
+
 
 export default function Accessories() {
   return (
-    <div>Accessories</div>
+    <>
+    {income.map((product) => (
+      <ProductTile income={product}/>
+    ))}
+  </>
   )
 }
