@@ -10,6 +10,7 @@ var income = [
       desctiption: "худи",
       img_src: "https://picsum.photos/250/250",
       img2_src: "https://picsum.photos/id/237/250/250",
+
       href: "#"
     },
     {
@@ -57,16 +58,6 @@ var income = [
       price: 20,
       desctiption: "худи",
       img_src: "https://picsum.photos/id/204/250/250",
-      img2_src: "https://picsum.photos/id/143/250/250",
-      href: "#"
-
-
-    },
-    {
-      title: "7",
-      price: 20,
-      desctiption: "худи",
-      img_src: "https://picsum.photos/id/211/250/250",
       img2_src: "https://picsum.photos/id/143/250/250",
       href: "#"
 

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className='content'>
 
-      <div className='figure'>
+      <div className='figure container'>
           <Image src={Slider} />
       </div>
 
@@ -23,7 +23,5 @@ export default function Home() {
       <Showcase text="Зацени, какие фигурки <3" comment="Мы сами печатаем все фигурки и гарантируем вам, они офигенные!" />
       
     </div>
-
-
   )
 }

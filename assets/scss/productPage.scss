@@ -1,0 +1,100 @@
+.product {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+
+
+    .-left {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+
+
+    .-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 555px;
+        // width: 555px;
+
+        .-top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 118px;
+
+
+            .-top-left {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+
+
+                .-title {
+                    font-weight: 400;
+                    font-size: 46px;
+                    line-height: 54px;
+                }
+                .-type {
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 27px;
+                }
+
+
+                .-block-2 {
+                    gap: 20px;
+                    display:flex;
+                    flex-wrap: wrap;
+                    
+                    
+                }
+
+                .-block-3 {
+                    gap: 20px;
+                    display:flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 20px;
+                }
+                
+            }
+
+            .-top-right {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                .-price {
+                    font-weight: 400;
+                    font-size: 46px;
+                    line-height: 54px;
+                    text-align: end;
+                }
+
+
+            }
+
+
+        }
+
+        .-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .cartStock {
+
+                .-inStock {
+                    display: flex;
+                    justify-content: end;
+                    font-weight: 200;
+                    font-size: 20px;
+                    line-height: 27px;
+                }
+            }
+        }
+    }
+
+}
