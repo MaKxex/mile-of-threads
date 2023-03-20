@@ -89,7 +89,7 @@ export default function Clothes() {
   return (
 
     <div className="-product-line">
-      {income.map((product) => (
+      {income.map((product,index) => (
         <ProductTile income={product}/>
       ))}
     </div>

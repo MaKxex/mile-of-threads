@@ -66,11 +66,11 @@ var income = [
 ]
 
 
-import {Manrope } from 'next/font/google'
+import {Manrope} from 'next/font/google'
 
 const manrope = Manrope({
     subsets: ['latin'],
-  })
+})
 
 
 
@@ -150,8 +150,6 @@ export default function ProductPage() {
                             <span className="-inStock"><span className={manrope.className}>Осталось футболок: 9</span></span>
                         </div>
                         
-
-
                     </div>
 
                 </div>
