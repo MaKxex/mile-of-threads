@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className='content'>
 
-      <div className='figure container'>
+      <div className='figure'>
           <Image src={Slider} />
       </div>
 
