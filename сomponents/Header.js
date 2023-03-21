@@ -9,21 +9,11 @@ import Link from 'next/link'
 
 
 
-import {Jura, Manrope } from 'next/font/google'
+import {jura, manrope } from "@/utils/fonts"
 
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import BackpackOutlinedIcon from '@mui/icons-material/BackpackOutlined';
 
-
-const jura = Jura({
-  weight: '400',
-  subsets: ['latin'],
-})
-
-const manrope = Manrope({
-  weight: '500',
-  subsets: ['latin'],
-})
 
 
 export default function Header() {

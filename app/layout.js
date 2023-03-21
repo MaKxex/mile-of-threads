@@ -3,7 +3,7 @@ import Header from '../сomponents/Header'
 import './globals.scss'
 
 export const metadata = {
-  title: 'Mile of Threads',
+  title: 'mile of Threads',
   description: '',
 }
 
