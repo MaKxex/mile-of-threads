@@ -9,21 +9,10 @@ import Link from 'next/link'
 
 
 
-import {Jura, Manrope } from 'next/font/google'
+import {jura, manrope } from '../utils/fonts.js'
 
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import BackpackOutlinedIcon from '@mui/icons-material/BackpackOutlined';
-
-
-const jura = Jura({
-  weight: '400',
-  subsets: ['latin'],
-})
-
-const manrope = Manrope({
-  weight: '500',
-  subsets: ['latin'],
-})
 
 
 export default function Header() {
@@ -41,12 +30,30 @@ export default function Header() {
             </div>
         </div>
         <div className='-bottom'>
-            <div className='-nav-drop'><Link className={jura.className} href="/whats-new">Что нового?</Link></div>
-            <div className='-nav-drop'><Link className={jura.className} href="/clothes">Одежда</Link></div>
-            <div className='-nav-drop'><Link className={jura.className} href="/accessories">Аксессуары</Link></div>
-            <div className='-nav-drop'><Link className={jura.className} href="/custom">Кастом</Link></div>
+            <div className='-nav-drop-links' >
+                <div className='-nav-drop'><Link className={jura.className} href="/whats-new">Что нового?</Link></div>
+                <div className='-nav-drop'><Link className={jura.className} href="/clothes">Одежда</Link></div>
+                <div className='-nav-drop'><Link className={jura.className} href="/accessories">Аксессуары</Link></div>
+                <div className='-nav-drop'><Link className={jura.className} href="/custom">Кастом</Link></div>
+            </div>
+
+            <div className='-nav-drop-content'>
+                    adwa
+                    <br/>
+
+                    adwa
+                    <br/>
+                    adwa
+                    <br/>
+                    adwa
+                    <br/>
+
+                </div>
+
         </div>
-    
+
+
+
     </div>
   )
 }

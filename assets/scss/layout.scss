@@ -20,7 +20,7 @@
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
-
+        
         .-navbar-icons {
             align-items: center;
             display: flex;
@@ -33,27 +33,51 @@
             
         }
 
-
+        
     }
     .-bottom {
-        margin: 0 200px;
-        justify-content: space-between;
-        display: flex;
-        //margin: 0 auto;
-        // display: grid;
-        // grid-template-columns: 25% 25% 25% 25%;
-        flex-direction: row;
-        font-family: 'Jura';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 46px;
-        color: #000000;
 
-        .-nav-drop {
+        .-nav-drop-links {
+            margin: 0 200px;
+            justify-content: space-between;
             display: flex;
+            //margin: 0 auto;
+            // display: grid;
+            // grid-template-columns: 25% 25% 25% 25%;
             flex-direction: row;
+            font-family: 'Jura';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 46px;
+            color: #000000;
+        }
+
+
+        
+        .-nav-drop {
+            display: block;
+            // display: flex;
+            // flex-direction: row;
+            
+            
+            &:hover .-nav-drop-content {
+                display: block;
+                color: black;
+                transition: 50ms;
+            }
         }
         
+        .-bottom > .-nav-drop-links > .-nav-drop:hover {
+            color: red;
+        }
+        
+        
+    }
+    .-nav-drop-content {
+        display: none;
+        border-top: 1px solid black;
+        color: red  ;
+        // position: absolute;
     }
 }
 
@@ -61,7 +85,7 @@
     //margin: 0 84px;
     display: flex;
     padding: 0 231px;
-  }
+}
 
 .container-112{
     display: flex;
