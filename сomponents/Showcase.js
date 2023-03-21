@@ -2,21 +2,31 @@ import Image from 'next/image'
 import Tovar from "../assets/img/tovar.jpg"
 import "../assets/scss/showcase.scss"
 
-import {Jura, Manrope } from 'next/font/google'
+import {jura, manrope } from '@/utils/fonts.js'
 
-const jura = Jura({
-    subsets: ['latin'],
-  })
-  
-  const manrope = Manrope({
-    subsets: ['latin'],
-  })
-  
+
+function set_random_line() {
+
+
+}
+
 
 export default function MySwiper(props) {
     return (
         <div className='container'>
-        <div className= 'product'>
+            <div className='abstract-box' >
+                <div className='abstract-line' style={{
+                    top: 110,
+                    left: 20
+                }}/>
+            </div>
+            <div className='abstract-box'>
+                <div className='abstract-line' style={{
+                    top: 100,
+                    left: 30
+                }}/>
+            </div>
+            <div className= 'product'>
                 <div className = "-top">
                     <div className='-title'>
                     <h1 className={jura.className}> {props.text}</h1>
