@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
+
 import {jura} from "@/utils/fonts.js"
+
 import "@/assets/scss/authForm.scss"
 
 
