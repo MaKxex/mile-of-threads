@@ -1,14 +1,5 @@
 import "../assets/scss/article.scss"
-import {Jura, Manrope } from 'next/font/google'
-
-const jura = Jura({
-    subsets: ['latin'],
-  })
-  
-const manrope = Manrope({
-subsets: ['latin'],
-})
-
+import {jura, manrope } from '@/utils/fonts.js'
 
 export default function Article(props) {
   return (

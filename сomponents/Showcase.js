@@ -2,8 +2,7 @@ import Image from 'next/image'
 import Tovar from "../assets/img/tovar.jpg"
 import "../assets/scss/showcase.scss"
 
-import {jura, manrope } from '@/utils/fonts.js'
-
+import {jura, manrope} from '@/utils/fonts.js'
 
 function set_random_line() {
 
@@ -11,7 +10,7 @@ function set_random_line() {
 }
 
 
-export default function MySwiper(props) {
+export default function Showcase(props) {
     return (
         <div className='container'>
             <div className='abstract-box' >
@@ -29,11 +28,11 @@ export default function MySwiper(props) {
             <div className= 'product'>
                 <div className = "-top">
                     <div className='-title'>
-                    <h1 className={jura.className}> {props.text}</h1>
+                        <h1 className={jura.className}> {props.text}</h1>
 
                     </div>
                     <div className='-comment'>
-                    <h2 className={manrope.className}>{props.comment}</h2>
+                        <h2 className={manrope.className}>{props.comment}</h2>
 
                     </div>
 
