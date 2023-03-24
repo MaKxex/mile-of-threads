@@ -33,7 +33,7 @@ export default function ScrollHeader() {
 		return () => {
 		  window.removeEventListener("scroll", logit);
 		};
-	  });
+	});
 
 
 
