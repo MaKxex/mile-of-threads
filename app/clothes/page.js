@@ -90,7 +90,7 @@ export default function Clothes() {
 
     <div className="-product-line">
       {income.map((product,index) => (
-        <ProductTile income={product}/>
+        <ProductTile key={index} income={product}/>
       ))}
     </div>
   
