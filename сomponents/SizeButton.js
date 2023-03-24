@@ -2,12 +2,7 @@
 import "../assets/scss/button.scss"
 
 
-import {Jura} from 'next/font/google'
-
-const jura = Jura({
-    subsets: ['latin'],
-})
-  
+import {jura} from "@/utils/fonts.js"
 
 export default function Button({text}) {
   return (

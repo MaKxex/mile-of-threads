@@ -1,11 +1,4 @@
-import React from 'react'
-
-import {Manrope } from 'next/font/google'
-
-const manrope = Manrope({
-    subsets: ['latin'],
-  })
-  
+import {manrope} from "@/utils/fonts.js"
 
 export default function ProductType({type}) {
   return (
