@@ -4,18 +4,25 @@ import ScrollHeader from '@/сomponents/ScrollHeader'
 import './globals.scss'
 import Head from 'next/head'
 
+
+
 export const metadata = {
-  title: 'Mile of Threads',
+  title: 'mile of Threads',
   description: '',
 }
 
+
+
+
+
+
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <Head>
         <script src="../scrollFunction.js" defer></script>
       </Head>
-
 
       <body>
         <ScrollHeader />
