@@ -1,8 +1,138 @@
 .scroll-navbar {
-    width: 100%;
-    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 0px;
+
+    .-scroll-navbar-wrapper {        
+        width: 100%;
+        background-color: #fff;
+        color: black;
+        position: fixed;
+        height: 100px;
+        z-index: 2;
+        
+        justify-content: center;
+        
+        display: grid;
+        
+        grid-template-columns: 25% 50% 25%;
+        padding: 0 15px;
+        
+        
+        .-scroll-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .logo {
+                width: 300px;
+                height: 77px;
+                
+                
+            }
+            
+            .-navbar-icons {
+            display: flex;
+            font-size: 32px;
+            gap: 15px;
+            .-navbar-icon {
+                width: 32px;
+                height: 32px;
+            }
+            
+        }
+        
+        .-subnav {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            // padding-bottom: 25px;
+            
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 38px; 
+            
+            &:hover .-subnav-content {
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+                z-index: 2;
+                opacity: 1;
+                
+                animation-name: subnav;
+                animation-duration: 0.2s;
+                animation-timing-function: linear;
+                animation-iteration-count: one;
+                
+                transition: 500ms;
+                
+            }
+            
+            @keyframes subnav {
+                from {
+                    opacity: 0.4;
+                    
+                }
+                to {
+                    opacity: 1;}
+                }
+                
+            }
+            
+            
+            
+        }
+        
+    }
+}
+    
+    .-subnav-content {
+        display: none;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100px;
+        z-index: 1;
+        // gap: 150px;
     color: black;
-    position: none;
-    height: 100px;
-    padding: 43px 15px;
+    border-top: 1px solid black;
+    
+    background-color: #fff;
+    // padding-top: 35px;
+    // padding: 25px;
+    // padding-bottom: 50px;
+    padding: 25px 35px 25px 50px;
+    
+    // border: 1px solid black;
+    // border-top: 1px solid black;
+    // position: absolute;
+
+
+    .-subnav-block {
+        display: flex;
+        flex-direction: column;
+        margin-left: 200px;
+
+        .-subnav-title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 35px;
+            margin-bottom: 20px;
+        }
+
+        .-subnav-link {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 41px;
+            
+            // padding-bottom: 15px;
+        }
+
+    }
+
+
 }

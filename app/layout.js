@@ -2,6 +2,7 @@ import Footer from '../сomponents/Footer'
 import Header from '../сomponents/Header'
 import ScrollHeader from '@/сomponents/ScrollHeader'
 import './globals.scss'
+import Head from 'next/head'
 
 export const metadata = {
   title: 'Mile of Threads',
@@ -11,8 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <script src="../scrollFunction.js" defer></script>
+      </Head>
+
+
       <body>
-        {/* <ScrollHeader /> */}
+        <ScrollHeader />
         <Header />
         {children}
         <Footer />

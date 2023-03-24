@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function Logo(width,height) {
   return (
     <Link className='logo' href="/">
-        <Image className='logo' style={{width:width , height:height}} src={LogoSvg} alt='logo'/>
+        <Image className='logo' src={LogoSvg} alt='logo'/>
     </Link>
   )
 }
