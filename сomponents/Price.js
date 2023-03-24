@@ -1,10 +1,4 @@
-
-import {Jura} from 'next/font/google'
-
-const jura = Jura({
-    subsets: ['latin'],
-})
-  
+import {jura} from "@/utils/fonts.js"
 
 
 export default function Price({price,currency}) {

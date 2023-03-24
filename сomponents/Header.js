@@ -10,10 +10,9 @@ import Link from 'next/link'
 
 import {jura, manrope } from '../utils/fonts.js'
 
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import BackpackOutlinedIcon from '@mui/icons-material/BackpackOutlined';
-import SubnavContent from './SubnavContent';
+import SubNav from './SubNav';
 import Logo from './Logo.js';
+import NavBarIcons from './NavBarIcons';
 
 
 export default function Header() {
@@ -22,33 +21,10 @@ export default function Header() {
         <div className='-top'>
             <div></div>
             <Logo/>
-            <div className='-navbar-icons'>
-              <Link href="/#" className='-navbar-icon'><span className={manrope.className}>rus</span></Link>
-              <Link href="/#"><AccountCircleOutlinedIcon className='-navbar-icon' /></Link>
-              <Link href="/#"><BackpackOutlinedIcon className='-navbar-icon' /></Link>
-            </div>
+            <NavBarIcons />
         </div>
         <div className='-bottom'>
-            <div className='-subnav'>
-              	<Link className={jura.className} href="/whats-new">Что нового?</Link>
-				
-            </div>
-
-
-            <div className='-subnav'>
-            	  	<Link className={jura.className} href="/clothes">Одежда</Link>
-					<SubnavContent />
-			  
-			  
-			</div>
-            
-            <div className='-subnav'>
-				<Link className={jura.className} href="/accessories">Аксессуары</Link>
-				<SubnavContent />
-				
-				
-				</div>
-            <div className='-subnav'><Link className={jura.className} href="/custom">Кастом</Link></div>
+            <SubNav />
 
 
         </div>
