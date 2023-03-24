@@ -6,7 +6,7 @@ export default function SubNav() {
   return (
     <>
         <div className='-subnav'>
-        <Link className={jura.className} href="/whats-new">Что нового?</Link>
+          <Link className={jura.className} href="/whats-new">Что нового?</Link>
         
         </div>
 
