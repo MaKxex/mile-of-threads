@@ -1,20 +1,28 @@
+"use client"
+import { useContext } from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
+import { UserContext } from '@/contexts/UserContext';
+import { getImageUrlByFilename } from "@/lib/scripts";
 
 export default function Profile() {
+  const { user } = useContext(UserContext);
+  console.log(user?.record?.name)
+
+
   return (
     <div className="container mx-auto px-4 md:px-6 py-8">
       <div className="grid md:grid-cols-[1fr_2fr] gap-8">
         <div className="bg-muted rounded-lg p-6">
           <div className="flex items-center gap-4">
             <Avatar className="w-16 h-16">
-              <AvatarImage src="/placeholder-user.jpg" />
+              <AvatarImage src={getImageUrlByFilename(user?.record, user?.record?.avatar)} />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <div>
-              <h2 className="text-xl font-semibold">Olivia Davis</h2>
-              <p className="text-muted-foreground">olivia.davis@acme.com</p>
+              <h2 className="text-xl font-semibold">{user?.record?.name}</h2>
+              <p className="text-muted-foreground">{user?.record?.email}</p>
             </div>
           </div>
           <Separator className="my-6" />

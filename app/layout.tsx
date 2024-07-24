@@ -6,7 +6,7 @@ import Header from "../components/static/Header";
 import { Container } from "@/components/Container";
 import { Toaster } from "@/components/ui/toaster";
 import { CartProvider } from "@/contexts/CartContext";
-import { AuthProvider } from "@/contexts/AuthContext";
+import { UserProvider } from "@/contexts/UserContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
+        <UserProvider>
         <Container>
           <CartProvider>
             <Header />
@@ -31,7 +31,7 @@ export default function RootLayout({
           </CartProvider>
         </Container>
         <Footer />
-        </AuthProvider>
+        </UserProvider>
       </body>
     </html>
   );

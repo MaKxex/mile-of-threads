@@ -5,7 +5,7 @@ import PocketBase from 'pocketbase';
 
 const pb = new PocketBase(process.env.NEXT_PUBLIC_BACKEND_URL);
 
-interface AuthContextProps {
+interface UserContextProps {
   user: User | null;
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<void>;
@@ -18,14 +18,13 @@ interface User {
   email: string;
 }
 
-export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
+export const UserContext = createContext<UserContextProps | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
+export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
-    console.log(storedUser);
     if (storedUser && storedUser !== "undefined") {
       setUser(JSON.parse(storedUser));
     }
@@ -35,6 +34,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const login = async (email: string, password: string) => {
     try {
       const authData = await pb.collection('user').authWithPassword(email, password);
+      console.log(authData);
+      
       setUser(authData);
       localStorage.setItem('user', JSON.stringify(authData));
     } catch (err) {
@@ -60,11 +61,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(null);
     localStorage.removeItem('user');
   };
-  console.log(!!user);
   
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated: !!user, login, register, logout }}>
+    <UserContext.Provider value={{ user, isAuthenticated: !!user, login, register, logout }}>
       {children}
-    </AuthContext.Provider>
+    </UserContext.Provider>
   );
 };

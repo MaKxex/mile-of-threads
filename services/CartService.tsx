@@ -29,7 +29,6 @@ class CartService {
         requestKey: null
       });
 
-      console.log(records);
       
       if (records.items.length === 0) {
         return [];

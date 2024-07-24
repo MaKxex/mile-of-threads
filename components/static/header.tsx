@@ -7,12 +7,11 @@ import Cart from "../cart/Cart";
 import { Badge } from "../ui/badge";
 import { useCartContext } from "@/contexts/CartContext";
 import { useContext } from "react";
-import { AuthContext } from "@/contexts/AuthContext";
+import { UserContext } from "@/contexts/UserContext";
 
 export default function Header() {
   const { cartElements } = useCartContext();
-  const { isAuthenticated } = useContext(AuthContext);
-  console.log(isAuthenticated);
+  const { isAuthenticated } = useContext(UserContext);
   
   return (
     <header className="flex justify-between items-center mb-8">
