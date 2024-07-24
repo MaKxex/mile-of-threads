@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "../components/static/footer";
-import Header from "../components/static/header";
-import { Container } from "@/components/container";
+import Footer from "../components/static/Footer";
+import Header from "../components/static/Header";
+import { Container } from "@/components/Container";
 import { Toaster } from "@/components/ui/toaster";
-import CartService from '@/services/CartService';
-
+import { CartProvider } from "@/contexts/CartContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 const inter = Inter({ subsets: ["latin"] });
-
-const cartService = CartService.getInstance(process.env.NEXT_PUBLIC_BACKEND_URL!, 'p1s45wz56xpf0bq'); // замените 'current_user_id' на ID текущего пользователя
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,12 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <AuthProvider>
         <Container>
+          <CartProvider>
             <Header />
             {children}
             <Toaster />
+          </CartProvider>
         </Container>
         <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

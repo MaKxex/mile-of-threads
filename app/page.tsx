@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast"
 import { IProduct } from "@/lib/interfaces";
 import {transformRecordToProduct} from "@/lib/scripts";
+import ContentBlock from "@/components/ContentBlock/ContentBlock";
+import { StaticCarausel } from "@/components/StaticCarousel/StaticCarousel";
 // Получаем текущую дату
 const currentDate = new Date();
 // Вычисляем дату два недели назад
@@ -57,7 +59,18 @@ export default function Home() {
 
   return (
     <main>
-      <ProductCarousel products={similarProducts} displayMode="imageOnly"/>
+      {/* <StaticCarausel>
+        
+      </StaticCarausel> */}
+      <ContentBlock title='Впервые в магазине' shortDescription='Мы тоже были в шоке увидев наши новые принты'>
+        <ProductCarousel products={similarProducts} displayMode="imageOnly"/>
+      </ContentBlock>
+
+      <ContentBlock title='Кстати о нас!' className="mt-4">
+        <div className="flex justify-center">
+          <p className="text-2xl w-[1000px]">Мы - единственный  магазин Латвии, где ты сможешь купить одежду с вышитым персонажем из твоего любимого аниме! Наш ассортимент пополняется с бешеным темпом! Ну а если ты не смог найти что-то интересное для себя, то ты сможешь заказать собственный эскиз, который будет вышит и доставлен в самые кратчайшие сроки. </p>
+        </div>
+      </ContentBlock>
     </main>
   );
 }

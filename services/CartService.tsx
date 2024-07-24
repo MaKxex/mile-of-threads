@@ -49,6 +49,7 @@ class CartService {
           color: record.color,
           amount: record.amount,
           image: getImageUrlByFilename(product, product.images[0]),
+          product:record.expand?.product.id
         };
       }).filter(item => item !== null);
     } catch (err) {
@@ -98,6 +99,7 @@ class CartService {
           color: createdRecord.color,
           amount: createdRecord.amount,
           image: product.image,
+          product:product.id
         };
       }
     } catch (err) {
@@ -131,7 +133,9 @@ class CartService {
         color: updatedRecord.color ?? 'N/A',
         amount: updatedRecord.amount ?? 0,
         image: getImageUrlByFilename(updatedRecord.expand?.product, updatedRecord.expand?.product.images[0]),
+        product:updatedRecord.expand?.product.id
       };
+      
     } catch (err) {
       console.error('Failed to update quantity:', err);
       throw new Error('Failed to update quantity.');

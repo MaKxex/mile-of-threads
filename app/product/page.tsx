@@ -1,6 +1,6 @@
 "use client"
 
-import { ProductCard } from "@/components/productCard";
+import { ProductCard } from "@/components/ProductCard";
 import PocketBase from 'pocketbase';
 import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast"

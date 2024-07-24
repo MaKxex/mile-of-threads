@@ -1,9 +1,9 @@
-// components/CartItem.tsx
 "use client"
 
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ICartItem } from "@/lib/interfaces"
+import Link from "next/link"
 
 export default function CartItem({
   item,
@@ -18,7 +18,10 @@ export default function CartItem({
 }) {
   return (
     <div key={item.id} className="grid grid-cols-[80px_1fr_auto] items-center gap-4">
-      <Image src={item.image} alt={item.name} width={80} height={80} className="rounded-lg object-cover" />
+      <Link
+        href={`/product/${item.product}`}>
+        <Image src={item.image} alt={item.name} width={80} height={80} className="rounded-lg object-cover" />
+      </Link>
       <div className="grid gap-1">
         <div className="font-medium">{item.name}</div>
         <div className="text-sm text-muted-foreground">

@@ -29,7 +29,6 @@ export interface IContainer {
 }
 
 export interface IProductCarousel {
-    title?: string;
     products: IProduct[];
     displayMode?: "default" | "imageOnly"; // Новый пропс для режима отображения
 }
@@ -41,6 +40,7 @@ export interface ICartItem {
     size: string;
     color:string;
     amount:number;
-    image: string
+    image: string;
+    product:string;
 }
 

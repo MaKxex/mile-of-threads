@@ -14,8 +14,12 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@/components/ui/toggle-group"
+import { useCartContext } from "@/contexts/CartContext";
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
+  const { addToCart } = useCartContext();
+
+
   const pb = new PocketBase(process.env.NEXT_PUBLIC_BACKEND_URL);
 
   const [product, setProduct] = useState<IProduct | null>(null);
@@ -66,10 +70,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       });
       return;
     }
-
-    const cartService = CartService.getInstance(process.env.NEXT_PUBLIC_BACKEND_URL!, 'p1s45wz56xpf0bq')
-    cartService.addToCart(product, selectedSize, selectedColor, 1)
-    
+    addToCart(product, selectedSize, selectedColor, 1)
   }
 
   function selectColorHandle(color:string) {

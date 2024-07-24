@@ -7,19 +7,21 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import CartItems from "@/components/cart/CartItems"
-// import CartService from "@/services/CartService"
-// import { useCart } from "@/contexts/CartContext"
+import CartService from "@/services/CartService"
+import { useState } from "react"
 
 
 export default function CheckoutPage() {
-  // const cartService = CartService.getInstance(process.env.NEXT_PUBLIC_BACKEND_URL!, 'p1s45wz56xpf0bq') // replace 'current_user_id' with the current user's ID
-  // const { loading, total, error, cartElements } = useCart()
-
-
-
+  const cartService = CartService.getInstance(process.env.NEXT_PUBLIC_BACKEND_URL!, 'p1s45wz56xpf0bq') // replace 'current_user_id' with the current user's ID
+  
+  
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  
+  
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <main className="flex-1 px-4 py-8 sm:px-6 md:grid md:grid-cols-[1fr_300px] md:gap-8 md:py-12 lg:px-8">
+      <main className="flex-1 px-4 py-8 sm:px-6 md:grid md:grid-cols-[1fr_350px] md:gap-8 md:py-12 lg:px-8">
         <div className="space-y-8">
           <div>
             <h1 className="text-2xl font-bold">Checkout</h1>
@@ -31,7 +33,7 @@ export default function CheckoutPage() {
           ) : error ? (
             <p className="text-red-500">{error}</p>
           ) : (
-            <>
+             <>
               <Card>
                 <CardHeader>
                   <CardTitle>Shipping Information</CardTitle>
@@ -137,7 +139,7 @@ export default function CheckoutPage() {
             </>
           )}
         </div>
-        <div className="space-y-4 md:sticky md:top-4">
+        <div className="space-y-4 md:sticky md:top-4 w-auto">
           <Card>
             <CardHeader>
               <CardTitle>Order Summary</CardTitle>
@@ -165,8 +167,10 @@ export default function CheckoutPage() {
             </CardContent>
           </Card>
           <Card>
+            <CardHeader>
             <CardTitle>Cart</CardTitle>
-            <CardContent>
+            </CardHeader>
+            <CardContent className="">
               <CartItems cartService={cartService}/>
             </CardContent>
           </Card>

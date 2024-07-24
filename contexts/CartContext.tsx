@@ -1,118 +1,78 @@
 "use client"
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { ICartItem } from '@/lib/interfaces';
 import CartService from '@/services/CartService';
-import { toast } from '@/components/ui/use-toast';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
-// Интерфейс контекста
+
 interface CartContextType {
   cartElements: ICartItem[];
-  loading: boolean;
-  error: string | null;
-  total: number;
-  handleIncrement: (id: string) => Promise<void>;
-  handleDecrement: (id: string) => Promise<void>;
-  handleRemove: (id: string) => Promise<void>;
+  setCartElements: React.Dispatch<React.SetStateAction<ICartItem[]>>;
+  addToCart: (product: any, size: string, color: string, amount: number) => Promise<void>;
+  removeFromCart: (itemId: string) => Promise<void>;
+  updateQuantity: (itemId: string, amount: number) => Promise<void>;
 }
 
-// Контекст
-const CartContext = createContext<CartContextType | undefined>(undefined);
+const CartContext = createContext<CartContextType | null>(null);
 
-// Провайдер контекста
-export const CartProvider: React.FC<{ children: ReactNode; cartService: CartService }> = ({ children, cartService }) => {
+export const CartProvider = ({ children }: { children: ReactNode }) => {
+  const cartService = CartService.getInstance(process.env.NEXT_PUBLIC_BACKEND_URL!, 'p1s45wz56xpf0bq');
   const [cartElements, setCartElements] = useState<ICartItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+
+  const fetchCartItems = async () => {
+    try {
+      const cartItems = await cartService.getCartElements();
+      setCartElements(cartItems);
+    } catch (error) {
+      console.error("Failed to fetch cart items", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const items = await cartService.getCartElements();
-        setCartElements(items);
-      } catch (err) {
-        console.error(err);
-        toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: 'There was a problem with your request.',
-        });
-        setError('There was a problem with your request.');
-      } finally {
-        setLoading(false);
-      }
-    };
+    fetchCartItems();
+  }, []);
 
-    fetchData();
-  }, [cartService]);
-
-  const total = cartElements.reduce((acc, item) => acc + item.price * item.amount, 0);
-
-  const handleIncrement = async (id: string) => {
+  
+  // Обновление корзины после добавления нового элемента
+  const addToCart = async (product: any, size: string, color: string, amount: number) => {
     try {
-      const item = cartElements.find(item => item.id === id);
-      if (item) {
-        const updatedItem = await cartService.updateQuantity(id, item.amount + 1);
-        setCartElements(cartElements.map(item => item.id === id ? updatedItem : item));
-      }
-    } catch (err) {
-      console.error(err);
-      toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: 'There was a problem with your request.',
-      });
+      await cartService.addToCart(product, size, color, amount);
+      fetchCartItems(); // Обновление состояния после добавления
+    } catch (error) {
+      console.error("Failed to add item to cart", error);
     }
   };
 
-  const handleDecrement = async (id: string) => {
+  // Удаление элемента из корзины и обновление состояния
+  const removeFromCart = async (itemId: string) => {
     try {
-      const item = cartElements.find(item => item.id === id);
-      if (item && item.amount > 1) {
-        const updatedItem = await cartService.updateQuantity(id, item.amount - 1);
-        setCartElements(cartElements.map(item => item.id === id ? updatedItem : item));
-      }
-    } catch (err) {
-      console.error(err);
-      toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: 'There was a problem with your request.',
-      });
+      await cartService.removeFromCart(itemId);
+      fetchCartItems(); // Обновление состояния после удаления
+    } catch (error) {
+      console.error("Failed to remove item from cart", error);
     }
   };
 
-  const handleRemove = async (id: string) => {
+  // Обновление количества элемента в корзине
+  const updateQuantity = async (itemId: string, amount: number) => {
     try {
-      await cartService.removeFromCart(id);
-      setCartElements(cartElements.filter(item => item.id !== id));
-    } catch (err) {
-      console.error(err);
-      toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: 'There was a problem with your request.',
-      });
+      await cartService.updateQuantity(itemId, amount);
+      fetchCartItems(); // Обновление состояния после изменения количества
+    } catch (error) {
+      console.error("Failed to update quantity", error);
     }
   };
 
-  const value = {
-    cartElements,
-    loading,
-    error,
-    total,
-    handleIncrement,
-    handleDecrement,
-    handleRemove,
-  };
-
-  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={{ cartElements, setCartElements, addToCart, removeFromCart, updateQuantity }}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
-// Хук для использования контекста
-export const useCart = (): CartContextType => {
+export const useCartContext = (): CartContextType => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('useCart must be used within a CartProvider');
+    throw new Error('useCartContext must be used within a CartProvider');
   }
   return context;
 };
