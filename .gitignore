@@ -1,1 +1,3 @@
-pb/*
+pb/pb_data
+pb/pb_hooks
+pb/pb_migrations
