@@ -8,9 +8,9 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
-import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
-
 import StoreDevtools from '../lib/demo-store-devtools'
+
+import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
 import { getLocale } from '#/paraglide/runtime'
 
@@ -63,7 +63,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
       </head>
-      <body className="font-sans antialiased [overflow-wrap:anywhere] selection:bg-[rgba(79,184,178,0.24)]">
+      <body className="font-sans antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)]">
         <Header />
         {children}
         <Footer />
@@ -76,8 +76,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               name: 'Tanstack Router',
               render: <TanStackRouterDevtoolsPanel />,
             },
-            TanStackQueryDevtools,
             StoreDevtools,
+            TanStackQueryDevtools,
           ]}
         />
         <Scripts />

@@ -16,14 +16,12 @@
   "chosenAddOns": [
     "eslint",
     "cloudflare",
-    "shadcn",
-    "paraglide",
-    "form",
     "db",
-    "mcp",
+    "paraglide",
     "table",
-    "tanstack-query",
+    "shadcn",
     "store",
-    "resume"
+    "tanstack-query",
+    "form"
   ]
 }
