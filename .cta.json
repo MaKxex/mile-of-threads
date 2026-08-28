@@ -1,0 +1,29 @@
+{
+  "projectName": "mile-of-threads",
+  "mode": "file-router",
+  "typescript": true,
+  "packageManager": "npm",
+  "includeExamples": true,
+  "tailwind": true,
+  "projectPreset": "default",
+  "addOnOptions": {},
+  "git": false,
+  "install": true,
+  "intent": true,
+  "routerOnly": false,
+  "version": 1,
+  "framework": "react",
+  "chosenAddOns": [
+    "eslint",
+    "cloudflare",
+    "shadcn",
+    "paraglide",
+    "form",
+    "db",
+    "mcp",
+    "table",
+    "tanstack-query",
+    "store",
+    "resume"
+  ]
+}
